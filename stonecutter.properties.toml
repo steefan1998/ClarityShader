@@ -1,6 +1,6 @@
 mod.id = "clarityshader"
 mod.name = "Clarity Shader"
-mod.version = "1.2.7"
+mod.version = "1.2.8"
 mod.group = "nl.chaos.clarityshader"
 mod.authors = "Stefan / Claude Code"
 mod.description = "Vibrant-style visuals (bloom, god rays, water reflections, color grading) with Low/Medium/High/Max quality profiles."
