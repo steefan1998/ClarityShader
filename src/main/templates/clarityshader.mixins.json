@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "nl.chaos.clarityshader.mixin",
+  "compatibilityLevel": "${mixin_java}",
+  "client": [
+    ${client_mixins}
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

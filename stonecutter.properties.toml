@@ -1,7 +1,7 @@
-mod.id = "vanillashader"
-mod.name = "Vanilla Shader"
+mod.id = "clarityshader"
+mod.name = "Clarity Shader"
 mod.version = "1.2.7"
-mod.group = "nl.chaos.vanillashader"
+mod.group = "nl.chaos.clarityshader"
 mod.authors = "Stefan / Claude Code"
 mod.description = "Vibrant-style visuals (bloom, god rays, water reflections, color grading) with Low/Medium/High/Max quality profiles."
 # Distant Horizons' API jar (DH 3.3+), the same for every Minecraft version; only compiled against.

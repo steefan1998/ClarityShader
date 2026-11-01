@@ -34,8 +34,8 @@ neoForge {
             systemProperty("neoforge.enabledGameTestNamespaces", modId)
             if (devCapture != null) {
                 // ./gradlew :<version>:runClient -PdevCapture : loads <run dir>/saves/world and screenshots every profile
-                systemProperty("vanillashader.devCapture", "true")
-                systemProperty("vanillashader.devCapture.commands", devCapture.toString())
+                systemProperty("clarityshader.devCapture", "true")
+                systemProperty("clarityshader.devCapture.commands", devCapture.toString())
                 programArguments.addAll("--quickPlaySingleplayer", "world")
                 // -PwindowSize=1920x1080 opens the window at that size, for screenshots bigger than the default 854x480.
                 findProperty("windowSize")?.toString()?.split("x")?.let { (width, height) ->
@@ -88,7 +88,7 @@ if (sc.current.parsed >= "26.3") {
     tasks.named<ProcessResources>("processResources") {
         // Gradle cannot see changes inside the filter below; bump this when editing it.
         inputs.property("shaderRewriteVersion", 2)
-        filesMatching("assets/vanillashader/shaders/post/*.fsh") {
+        filesMatching("assets/clarityshader/shaders/post/*.fsh") {
             filter { line ->
                 when (line) {
                     "#version 330" -> "#version 330\n#extension GL_ARB_separate_shader_objects : require"
@@ -108,7 +108,7 @@ if (sc.current.parsed < "26.1") {
     val glSources = rootProject.file("src/gl/java")
     sourceSets.main {
         java.srcDir(glSources)
-        java.exclude { it.relativePath.pathString.startsWith("nl/chaos/vanillashader/client/gpu/") && !it.file.startsWith(glSources) }
+        java.exclude { it.relativePath.pathString.startsWith("nl/chaos/clarityshader/client/gpu/") && !it.file.startsWith(glSources) }
     }
 }
 
@@ -180,10 +180,10 @@ val validateShaders = tasks.register<JavaExec>("validateShaders") {
     group = "verification"
     description = "Compiles all post shaders with glslang to catch errors strict drivers would report."
     classpath = shaderCheck.runtimeClasspath
-    mainClass = "nl.chaos.vanillashader.shadercheck.ValidateShaders"
+    mainClass = "nl.chaos.clarityshader.shadercheck.ValidateShaders"
     // The processed shaders, so version-specific rewrites (see processResources) are checked too.
     dependsOn("processResources")
-    args(layout.buildDirectory.dir("resources/main/assets/vanillashader/shaders").get().asFile.absolutePath)
+    args(layout.buildDirectory.dir("resources/main/assets/clarityshader/shaders").get().asFile.absolutePath)
 }
 tasks.named("check") {
     dependsOn(validateShaders)

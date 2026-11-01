@@ -21,4 +21,4 @@ stonecutter {
     }
 }
 
-rootProject.name = "vanillashader"
+rootProject.name = "clarityshader"

@@ -1,16 +1,16 @@
-# Vanilla Shader
+# Clarity Shader
 
 A NeoForge mod for Minecraft **1.21.1, 26.1.2, 26.2 and 26.3** that gives the game a vibrant, shader-like look while staying compatible
 with **Sodium**, **WeatherStory** and **Distant Horizons**. Everything is post-processing on top of the normal renderer, so no
 shader pack loader is needed.
 
-![Sunset over a forest with Vanilla Shader on Max](docs/screenshots/sunset.jpg)
+![Sunset over a forest with Clarity Shader on Max](docs/screenshots/sunset.jpg)
 
 ## Screenshots
 
 All shots use the Max profile together with Sodium and WeatherStory; "vanilla" is the same view with the mod off.
 
-| Vanilla | Vanilla Shader (Max) |
+| Vanilla | Clarity Shader (Max) |
 |---|---|
 | ![Sunset, vanilla](docs/screenshots/sunset-vanilla.jpg) | ![Sunset with god rays, haze and bloom](docs/screenshots/sunset.jpg) |
 | ![Lake, vanilla](docs/screenshots/lake-vanilla.jpg) | ![Lake with reflections and tree shadows](docs/screenshots/lake.jpg) |
@@ -24,7 +24,7 @@ All shots use the Max profile together with Sodium and WeatherStory; "vanilla" i
 
 These shots use the Max profile with Sodium and Distant Horizons on Minecraft 1.21.1.
 
-| Vanilla with Distant Horizons | Vanilla Shader (Max) |
+| Vanilla with Distant Horizons | Clarity Shader (Max) |
 |---|---|
 | ![Valley at golden hour, vanilla with Distant Horizons](docs/screenshots/golden-valley-vanilla.jpg) | ![Valley at golden hour: Distant Horizons terrain in the sunset haze](docs/screenshots/golden-valley.jpg) |
 | ![Islands under a clear sky, vanilla](docs/screenshots/islands-vanilla.jpg) | ![Islands under a blue sky, with Distant Horizons terrain on the horizon](docs/screenshots/islands.jpg) |
@@ -76,12 +76,12 @@ These shots use the Max profile with Sodium and Distant Horizons on Minecraft 1.
   - a switch in the settings turns DH's drawing off and on (DH's own settings are left alone), and at game start a
     prompt asks whether to use DH this time (with "don't show again").
 - **AMD FSR 1 upscaling:** a render scale per profile and a sharpness slider. The HUD always stays sharp.
-- **Settings:** in Sodium's Video Settings (a "Vanilla Shader" page), or without Sodium through a "Vanilla Shader..." button in Minecraft's own Video Settings, and in NeoForge's config screen. The Look page has a reset button.
+- **Settings:** in Sodium's Video Settings (a "Clarity Shader" page), or without Sodium through a "Clarity Shader..." button in Minecraft's own Video Settings, and in NeoForge's config screen. The Look page has a reset button.
 - **Languages:** English, Dutch, German, French, Spanish, Brazilian Portuguese, Italian, Polish, Russian, Ukrainian, Turkish, Simplified and Traditional Chinese, Japanese and Korean.
 
 ## Requirements
 
-There is a separate jar for each Minecraft version (`vanillashader-<version>+mc<minecraft>.jar`):
+There is a separate jar for each Minecraft version (`clarityshader-<version>+mc<minecraft>.jar`):
 
 | Minecraft | NeoForge | Sodium (optional) | Notes |
 |---|---|---|---|
@@ -111,8 +111,8 @@ through the Gradle toolchain. The GPU code (`client/gpu`) uses Minecraft's own G
 
 For development, `./gradlew :<minecraft>:runClient -PdevCapture=...` loads `saves/world` from the run folder (`run/`
 for 26.1.2, `runs/<minecraft>/` for the others) and saves a screenshot per profile. On 1.21.1, add
-`-Pjvm.vanillashader.devCapture.newWorldSeed=<seed>` to create that world first.
-Add `-Pjvm.vanillashader.profilePasses=true` to log GPU timings for every pass. See `DevCapture` and `PassTimer`.
+`-Pjvm.clarityshader.devCapture.newWorldSeed=<seed>` to create that world first.
+Add `-Pjvm.clarityshader.profilePasses=true` to log GPU timings for every pass. See `DevCapture` and `PassTimer`.
 
 ## Notes
 
